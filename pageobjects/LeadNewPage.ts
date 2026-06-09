@@ -78,6 +78,10 @@ export class LeadNewPage {
     cancelEdit: { strategy: 'css' as const, value: '[name="CancelEdit"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
     saveAndNew: { strategy: 'css' as const, value: '[name="SaveAndNew"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
     saveEdit: { strategy: 'css' as const, value: '[name="SaveEdit"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
+    saveButton: { strategy: 'css' as const, value: '[name="SaveEdit"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
+    lastNameError: { strategy: 'css' as const, value: '.slds-form-element__help, [class*="errorMessage"], div[role="alert"] p', shadowHost: 'force-record-edit-type', actionKind: 'text' as const },
+    companyError: { strategy: 'css' as const, value: '.slds-form-element__help, [class*="errorMessage"], div[role="alert"] p', shadowHost: 'force-record-edit-type', actionKind: 'text' as const },
+    leadRecordHeader: { strategy: 'css' as const, value: 'lightning-record-highlight-panel', actionKind: 'text' as const },
   } as const;
 
   constructor(private readonly page: Page) {}
@@ -2401,6 +2405,30 @@ export class LeadNewPage {
 
   async expectSaveEditCount(count: number, timeoutMs = 30_000): Promise<void> {
     await expectCount(webLocator(this.page, LeadNewPage.L.saveEdit), count, timeoutMs);
+  }
+
+  async clickSaveButton(): Promise<void> {
+    await clickWhenVisible(this.page, LeadNewPage.L.saveButton);
+  }
+
+  async expectLastNameErrorVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, LeadNewPage.L.lastNameError), timeoutMs);
+  }
+
+  async expectLastNameErrorText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, LeadNewPage.L.lastNameError), expected, timeoutMs);
+  }
+
+  async expectCompanyErrorVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, LeadNewPage.L.companyError), timeoutMs);
+  }
+
+  async expectCompanyErrorText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, LeadNewPage.L.companyError), expected, timeoutMs);
+  }
+
+  async expectLeadRecordHeaderVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, LeadNewPage.L.leadRecordHeader), timeoutMs);
   }
 
 }

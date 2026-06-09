@@ -1,1 +1,12 @@
-{}
+{
+  "createLead": {
+    "firstName": "John",
+    "lastName": "Smith",
+    "company": "ABC Technologies",
+    "phone": "9989876789",
+    "email": "john.smith@example.com",
+    "leadSource": "Web",
+    "companyName": "ABC Technologies",
+    "expectedStatus": "Open - Not Contacted"
+  }
+}
