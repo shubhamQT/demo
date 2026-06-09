@@ -1,0 +1,66 @@
+{
+  "id": "redirect-to-lead-record-after-save",
+  "testPlanId": "339a1da2-f8e3-435f-8130-f0c7433871d9",
+  "requirementId": "86272330-a108-44fb-a0d6-0dff45e0a8c6",
+  "suiteName": "Create Lead - E2E",
+  "case": {
+    "id": "redirect-to-lead-record-after-save",
+    "title": "Verify user is redirected to Lead record page after successful creation",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Open Salesforce environment home page",
+        "value": "https://orgfarm-cdb7bbd1fc-dev-ed.develop.my.salesforce.com"
+      },
+      {
+        "id": "step2",
+        "action": "tap",
+        "targetDescription": "Click on Leads tab",
+        "locatorHint": "role=tab name=Leads"
+      },
+      {
+        "id": "step3",
+        "action": "tap",
+        "targetDescription": "Click on New button",
+        "locatorHint": "role=button name=New"
+      },
+      {
+        "id": "step4",
+        "action": "fill",
+        "targetDescription": "Enter Last Name",
+        "locatorHint": "label=Last Name",
+        "value": "Smith"
+      },
+      {
+        "id": "step5",
+        "action": "fill",
+        "targetDescription": "Enter Company",
+        "locatorHint": "label=Company",
+        "value": "ABC Technologies"
+      },
+      {
+        "id": "step6",
+        "action": "tap",
+        "targetDescription": "Click Save button",
+        "locatorHint": "role=button name=Save"
+      },
+      {
+        "id": "step7",
+        "action": "assertVisible",
+        "targetDescription": "Verify Lead record page is displayed",
+        "locatorHint": "data-testid=lead-record-header"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression",
+      "lead"
+    ]
+  }
+}

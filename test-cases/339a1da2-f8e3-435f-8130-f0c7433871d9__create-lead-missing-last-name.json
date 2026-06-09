@@ -1,0 +1,66 @@
+{
+  "id": "create-lead-missing-last-name",
+  "testPlanId": "339a1da2-f8e3-435f-8130-f0c7433871d9",
+  "requirementId": "86272330-a108-44fb-a0d6-0dff45e0a8c6",
+  "suiteName": "Create Lead - E2E",
+  "case": {
+    "id": "create-lead-missing-last-name",
+    "title": "Attempt to create Lead without Last Name and verify validation error",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Open Salesforce environment home page",
+        "value": "https://orgfarm-cdb7bbd1fc-dev-ed.develop.my.salesforce.com"
+      },
+      {
+        "id": "step2",
+        "action": "tap",
+        "targetDescription": "Click on Leads tab",
+        "locatorHint": "role=tab name=Leads"
+      },
+      {
+        "id": "step3",
+        "action": "tap",
+        "targetDescription": "Click on New button",
+        "locatorHint": "role=button name=New"
+      },
+      {
+        "id": "step4",
+        "action": "fill",
+        "targetDescription": "Enter Company",
+        "locatorHint": "label=Company",
+        "value": "ABC Technologies"
+      },
+      {
+        "id": "step5",
+        "action": "tap",
+        "targetDescription": "Click Save button",
+        "locatorHint": "role=button name=Save"
+      },
+      {
+        "id": "step6",
+        "action": "assertVisible",
+        "targetDescription": "Verify Last Name validation error is displayed",
+        "locatorHint": "data-testid=last-name-error"
+      },
+      {
+        "id": "step7",
+        "action": "assertText",
+        "targetDescription": "Verify error message text for Last Name",
+        "locatorHint": "data-testid=last-name-error",
+        "assertion": "These required fields must be completed: Last Name"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression",
+      "lead"
+    ]
+  }
+}
