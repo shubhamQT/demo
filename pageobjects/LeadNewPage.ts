@@ -2408,7 +2408,7 @@ export class LeadNewPage {
   }
 
   async clickSaveButton(): Promise<void> {
-    await clickWhenVisible(this.page, LeadNewPage.L.saveButton);
+    await clickWhenVisible(webLocator(this.page, LeadNewPage.L.saveButton));
   }
 
   async expectLastNameErrorVisible(timeoutMs = 30_000): Promise<void> {
