@@ -116,6 +116,7 @@ export class LeadListPage {
   constructor(private readonly page: Page) {}
 
   async clickSkipToNavigation(): Promise<void> {
+    await this.page.waitForTimeout(1000);
     await clickWhenVisible(webLocator(this.page, LeadListPage.L.skipToNavigation));
   }
 
