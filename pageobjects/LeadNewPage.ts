@@ -79,9 +79,9 @@ export class LeadNewPage {
     saveAndNew: { strategy: 'css' as const, value: '[name="SaveAndNew"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
     saveEdit: { strategy: 'css' as const, value: '[name="SaveEdit"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
     saveButton: { strategy: 'css' as const, value: '[name="SaveEdit"]', shadowHost: 'lightning-button', actionKind: 'button' as const },
-    lastNameError: { strategy: 'css' as const, value: '.slds-form-element__help, [class*="errorMessage"], div[role="alert"] p', shadowHost: 'force-record-edit-type', actionKind: 'text' as const },
-    companyError: { strategy: 'css' as const, value: '.slds-form-element__help, [class*="errorMessage"], div[role="alert"] p', shadowHost: 'force-record-edit-type', actionKind: 'text' as const },
-    leadRecordHeader: { strategy: 'css' as const, value: '.runtime_pipeline_inspectorPipelineInspectorHome h1', actionKind: 'text' as const },
+    lastNameError: { strategy: 'css' as const, value: '.container .fieldLevelErrors a', actionKind: 'text' as const },
+    companyError: { strategy: 'css' as const, value: '.container .fieldLevelErrors a', actionKind: 'text' as const },
+    leadRecordHeader: { strategy: 'css' as const, value: '[name="entityLabel"] records-entity-label', actionKind: 'text' as const },
   } as const;
 
   constructor(private readonly page: Page) {}

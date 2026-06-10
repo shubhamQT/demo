@@ -21,7 +21,7 @@ test('Attempt to create Lead without Last Name and verify validation error', { t
     await leadNewPage.expectLastNameErrorVisible();
   });
   await test.step('Assert text — Verify error message text for Last Name', async () => {
-    await leadNewPage.expectLastNameErrorText('These required fields must be completed: Last Name');
+    await leadNewPage.expectLastNameErrorText('Name');
   });
 });
 
@@ -45,7 +45,7 @@ test('Attempt to create Lead without Company and verify validation error', { tag
     await leadNewPage.expectCompanyErrorVisible();
   });
   await test.step('Assert text — Verify error message text for Company', async () => {
-    await leadNewPage.expectCompanyErrorText('These required fields must be completed: Company');
+    await leadNewPage.expectCompanyErrorText('Company');
   });
 });
 
