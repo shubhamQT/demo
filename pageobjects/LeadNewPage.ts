@@ -2412,7 +2412,6 @@ export class LeadNewPage {
   }
 
   async expectLastNameErrorVisible(timeoutMs = 30_000): Promise<void> {
-    await this.page.waitForTimeout(1000); // Wait for potential error message to appear
     await expectVisible(webLocator(this.page, LeadNewPage.L.lastNameError), timeoutMs);
   }
 
@@ -2421,7 +2420,6 @@ export class LeadNewPage {
   }
 
   async expectCompanyErrorVisible(timeoutMs = 30_000): Promise<void> {
-    await this.page.waitForTimeout(1000); // Wait for potential header to appear after saving
     await expectVisible(webLocator(this.page, LeadNewPage.L.companyError), timeoutMs);
   }
 
@@ -2430,7 +2428,6 @@ export class LeadNewPage {
   }
 
   async expectLeadRecordHeaderVisible(timeoutMs = 30_000): Promise<void> {
-    await this.page.waitForTimeout(1000); // Wait for potential header to appear after saving
     await expectVisible(webLocator(this.page, LeadNewPage.L.leadRecordHeader), timeoutMs);
   }
 
